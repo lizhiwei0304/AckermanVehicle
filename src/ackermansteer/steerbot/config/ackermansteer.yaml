@@ -1,0 +1,14 @@
+commandTopic: cmd_vel
+odometryTopic: odom
+odometryFrame: odom
+robotBaseFrame: base_link
+publishWheelTF: false
+publishOdomTF: true
+publishWheelJointState: false
+wheelseparation: 1.535
+wheelDiameter: 0.8693
+wheelAcceleration: 0.0
+WheelTorque: 5000000.0
+updateRate: 50.0
+odometrySource: world
+

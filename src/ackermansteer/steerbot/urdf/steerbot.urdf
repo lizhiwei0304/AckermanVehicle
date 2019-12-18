@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="steerbot">
+  <link
+    name="base_link"/>
+    
+  <link
+    name="steerbot_chassis">
+    <inertial>
+      <origin
+        xyz="1.2931 -0.00013502 1.2025"
+        rpy="0 0 0" />
+      <mass
+        value="800" />
+      <inertia
+        ixx="5698.5"
+        ixy="-6.4037"
+        ixz="765.78"
+        iyy="13145"
+        iyz="4.5898"
+        izz="15481" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/steerbot_chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/steerbot_chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="steerbot_footprint_joint"
+    type="fixed">
+    <origin
+      xyz="-1.4725 0.0014967 -1.2481"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="steerbot_chassis" />
+    <axis
+      xyz="0 0 0" />
+    <dynamics friction="0.1"/>
+  </joint>
+  <link
+    name="front_left_strut">
+    <inertial>
+      <origin
+        xyz="0 0.15 -0.086266"
+        rpy="0 0 0" />
+      <mass
+        value="5.8054" />
+      <inertia
+        ixx="0.10756"
+        ixy="7.7062E-19"
+        ixz="1.4973E-17"
+        iyy="0.074472"
+        iyz="1.4914E-17"
+        izz="0.061438" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/front_left_strut.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/front_left_strut.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_steer_bearing"
+    type="revolute">
+    <origin
+      xyz="3.2976 0.6425 0.28465"
+      rpy="1.5708 0 0" />
+    <parent
+      link="steerbot_chassis" />
+    <child
+      link="front_left_strut" />
+    <axis
+      xyz="0 1 0" />
+    <limit effort="100000" lower="-1.0" upper="1.0" velocity="1.0"/>
+    <dynamics friction="0.1"/>
+  </joint>
+  <link
+    name="front_left_wheel">
+    <inertial>
+      <origin
+        xyz="6.7998E-06 2.7332E-07 -0.16168"
+        rpy="0 0 0" />
+      <mass
+        value="153.21" />
+      <inertia
+        ixx="9.1781"
+        ixy="-7.6597E-06"
+        ixz="-2.2665E-06"
+        iyy="9.1785"
+        iyz="-5.9075E-06"
+        izz="16.054" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/front_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29412 0.29412 0.29412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/front_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_left_wheel_bearing"
+    type="continuous">
+    <origin
+      xyz="0 0.15 -0.1246"
+      rpy="0 0 0.23564" />
+    <parent
+      link="front_left_strut" />
+    <child
+      link="front_left_wheel" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics friction="0.001"/>
+  </joint>
+  <link
+    name="front_right_strut">
+    <inertial>
+      <origin
+        xyz="2.2204E-16 -0.15 0.086266"
+        rpy="0 0 0" />
+      <mass
+        value="5.8054" />
+      <inertia
+        ixx="0.10756"
+        ixy="-1.0897E-17"
+        ixz="-2.3086E-17"
+        iyy="0.074472"
+        iyz="9.0279E-18"
+        izz="0.061438" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/front_right_strut.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/front_right_strut.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_steer_bearing"
+    type="revolute">
+    <origin
+      xyz="3.2976 -0.6425 0.28465"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="steerbot_chassis" />
+    <child
+      link="front_right_strut" />
+    <axis
+      xyz="0 -1 0" />
+    <limit effort="100000" lower="-1.0" upper="1.0" velocity="1.0"/>
+    <dynamics friction="0.1"/>
+  </joint>
+  <link
+    name="front_right_wheel">
+    <inertial>
+      <origin
+        xyz="6.7998E-06 2.7332E-07 -0.16168"
+        rpy="0 0 0" />
+      <mass
+        value="153.21" />
+      <inertia
+        ixx="9.1781"
+        ixy="-7.6597E-06"
+        ixz="-2.2665E-06"
+        iyy="9.1785"
+        iyz="-5.9075E-06"
+        izz="16.054" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/front_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29412 0.29412 0.29412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/front_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="front_right_wheel_bearing"
+    type="continuous">
+    <origin
+      xyz="0 -0.15 0.1246"
+      rpy="3.1416 0 1.7234" />
+    <parent
+      link="front_right_strut" />
+    <child
+      link="front_right_wheel" />
+    <axis
+      xyz="0 0 1" />
+    <dynamics friction="0.001"/>
+  </joint>
+  <link
+    name="rear_left_strut">
+    <inertial>
+      <origin
+        xyz="2.2204E-16 0.15 -0.086266"
+        rpy="0 0 0" />
+      <mass
+        value="5.8054" />
+      <inertia
+        ixx="0.10756"
+        ixy="2.2381E-17"
+        ixz="-1.227E-17"
+        iyy="0.074472"
+        iyz="1.9232E-17"
+        izz="0.061438" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/rear_left_strut.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/rear_left_strut.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_steer_bearing"
+    type="fixed">
+    <origin
+      xyz="-0.0024085 0.6425 0.28465"
+      rpy="1.5708 0 0" />
+    <parent
+      link="steerbot_chassis" />
+    <child
+      link="rear_left_strut" />
+    <axis
+      xyz="0 1 0" />
+    <dynamics friction="0.1"/>
+  </joint>
+  <link
+    name="rear_left_wheel">
+    <inertial>
+      <origin
+        xyz="6.7998E-06 2.7332E-07 -0.16168"
+        rpy="0 0 0" />
+      <mass
+        value="153.21" />
+      <inertia
+        ixx="9.1781"
+        ixy="-7.6597E-06"
+        ixz="-2.2665E-06"
+        iyy="9.1785"
+        iyz="-5.9075E-06"
+        izz="16.054" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/rear_left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29412 0.29412 0.29412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/rear_left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_left_wheel_bearing"
+    type="continuous">
+    <origin
+      xyz="0 0.15 -0.1246"
+      rpy="0 0 -0.28166" />
+    <parent
+      link="rear_left_strut" />
+    <child
+      link="rear_left_wheel" />
+    <axis
+      xyz="0 0 -1" />
+    <dynamics friction="0.1"/>
+  </joint>
+  <link
+    name="rear_right_strut">
+    <inertial>
+      <origin
+        xyz="-2.2204E-16 -0.15 0.086266"
+        rpy="0 0 0" />
+      <mass
+        value="5.8054" />
+      <inertia
+        ixx="0.10756"
+        ixy="-1.4964E-17"
+        ixz="-1.6914E-17"
+        iyy="0.074472"
+        iyz="1.5761E-17"
+        izz="0.061438" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/rear_right_strut.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/rear_right_strut.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_steer_bearing"
+    type="fixed">
+    <origin
+      xyz="-0.0024085 -0.6425 0.28465"
+      rpy="-1.5708 0 3.1416" />
+    <parent
+      link="steerbot_chassis" />
+    <child
+      link="rear_right_strut" />
+    <axis
+      xyz="0 1 0" />
+    <dynamics friction="0.1"/>
+  </joint>
+  <link
+    name="rear_right_wheel">
+    <inertial>
+      <origin
+        xyz="6.7998E-06 2.7332E-07 -0.16168"
+        rpy="0 0 0" />
+      <mass
+        value="153.21" />
+      <inertia
+        ixx="9.1781"
+        ixy="-7.6597E-06"
+        ixz="-2.2665E-06"
+        iyy="9.1785"
+        iyz="-5.9075E-06"
+        izz="16.054" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/rear_right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29412 0.29412 0.29412 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://steerbot/meshes/rear_right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rear_right_wheel_bearing"
+    type="continuous">
+    <origin
+      xyz="0 -0.15 0.1246"
+      rpy="3.1416 0 2.7543" />
+    <parent
+      link="rear_right_strut" />
+    <child
+      link="rear_right_wheel" />
+    <axis
+      xyz="0 0 1" />
+     <dynamics friction="0.1"/>
+  </joint>
+
+
+  <!-- ros_control plugin -->
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/robot</robotNamespace>
+      <robotSimType>gazebo_ros_control/DefaultRobotHWSim</robotSimType>
+      <legacyModeNS>true</legacyModeNS>
+    </plugin>
+  </gazebo>
+
+  <!-- gazebo configure -->
+  <gazebo>
+      <plugin name="ackermansteer" filename="libackermansteer.so">
+         <debug>false</debug>
+         <commandTopic>cmd_vel</commandTopic>
+         <odometryTopic>odom</odometryTopic>
+         <odometryFrame>odom</odometryFrame>
+         <robotBaseFrame>base_link</robotBaseFrame>
+         <publishWheelTF>false</publishWheelTF>
+         <publishSteerTF>false</publishSteerTF>
+         <publishOdomTF>false</publishOdomTF>
+	 <publishWheelJointState>false</publishWheelJointState>
+	 <legacyMode>true</legacyMode>
+	 <odometryFrame>false</odometryFrame>
+         <rosDebugLevel></rosDebugLevel>
+         <odometrySource>true</odometrySource>
+         <publishTf>1</publishTf>
+
+         <!-- Wheel Placement -->
+         <wheelSeparation>1.535</wheelSeparation>
+         <wheelbase>3.271</wheelbase>
+         <wheelDiameter>0.8693</wheelDiameter>
+
+         <wheelAcceleration>0.0</wheelAcceleration>
+         <wheelTorque>5000000.0</wheelTorque>
+         <updateRate>50.0</updateRate>
+ 	 <drive_init_velocity>0.0</drive_init_velocity>
+
+         <!--PID settings - - - - - - - - - - - - - - - - - - - -
+              p      -    proportional gain
+              i      -    intergral gain
+              d      -    derivative gain
+              imax   -    anti windup max
+              imin   -    anti windup min
+         - - - - - - - - - - - - - - - - - - - - - - - - - -  -->
+
+         <!-- Steering PID settings -->
+         <steer_p>50000.0</steer_p>
+         <steer_i>5.0</steer_i>
+         <steer_d>0.11</steer_d>
+         <steer_imax>5.0</steer_imax>
+         <steer_imin>-5.0</steer_imin>
+         <steer_max_effort>100000.0</steer_max_effort>
+         <steer_init_angle>0.0</steer_init_angle>
+
+         <!-- Wheel Velocity PID settings -->
+         <drive_p>50000.0</drive_p>
+         <drive_i>0.01</drive_i>
+         <drive_d>0.01</drive_d>
+         <drive_imax>1.0</drive_imax>
+         <drive_imin>-1.0</drive_imin>
+         <drive_max_effort>100000.0</drive_max_effort>
+         <drive_init_velocity>0.0</drive_init_velocity>
+         
+         <!-- Wheel Joints -->
+         <FR_steerJoint>front_right_steer_bearing</FR_steerJoint>
+         <FR_driveJoint>front_right_wheel_bearing</FR_driveJoint>
+         <FL_steerJoint>front_left_steer_bearing</FL_steerJoint>
+         <FL_driveJoint>front_left_wheel_bearing</FL_driveJoint>
+         <RL_steerJoint>rear_left_steer_bearing</RL_steerJoint>
+         <RL_driveJoint>rear_left_wheel_bearing</RL_driveJoint>
+         <RR_steerJoint>rear_right_steer_bearing</RR_steerJoint>
+         <RR_driveJoint>rear_right_wheel_bearing</RR_driveJoint>
+
+      </plugin>
+    </gazebo>
+
+<gazebo>
+  <plugin name="p3d_base_controller" filename="libgazebo_ros_p3d.so">
+    <alwaysOn>true</alwaysOn>
+    <updateRate>50.0</updateRate>
+    <bodyName>base_link</bodyName>
+    <topicName>groundtruth/state</topicName>
+    <gaussianNoise>0.0</gaussianNoise>
+    <frameName>world</frameName>
+    <xyzOffsets>0 0 0</xyzOffsets>
+    <rpyOffsets>0 0 0</rpyOffsets>
+  </plugin>
+</gazebo>
+
+</robot>
