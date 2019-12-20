@@ -32,11 +32,20 @@
  <!-- Launch Gazebo World -->
 
  <include file="$(find gazebo_ros)/launch/empty_world.launch" >
-        <arg name="paused" value="false"/>
+        <!--arg name="paused" value="false"/>
         <arg name="use_sim_time" value="true"/>
         <arg name="debug" value="false"/>
         <arg name="gui" value="true"/>
         <arg name="world_name" value='$(find steerbot)/world/world.world'/>
+ </include-->
+
+   <arg name="world_name" value="$(find steerbot)/world/cityy.world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
+    <arg name="paused" value="false"/>
+    <arg name="use_sim_time" value="true"/>
+    <arg name="gui" value="true"/>
+    <arg name="headless" value="false"/> <!-- Inert - see gazebo_ros_pkgs issue #491 -->
+    <arg name="recording" value="false"/>
+    <arg name="debug" value="false"/>
   </include>
 
     <!-- Spawn My Robot -->
