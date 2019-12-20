@@ -16,7 +16,7 @@
 
 上述中，**linear.x**表示的是车辆的期望线速度;**cmd_msg->angular.z**表示的是车辆的期望转角。
 
-**Tips:**在gazebo中仿真运行时需要下载gazebo的模型文件，否则打不开world。
+Tips:在gazebo中仿真运行时需要下载gazebo的模型文件，否则打不开world。
 
 [模型文件的下载](https://blog.csdn.net/qq_36170626/article/details/90417359)
 
