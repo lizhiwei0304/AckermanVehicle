@@ -32,12 +32,6 @@
  <!-- Launch Gazebo World -->
 
  <include file="$(find gazebo_ros)/launch/empty_world.launch" >
-        <!--arg name="paused" value="false"/>
-        <arg name="use_sim_time" value="true"/>
-        <arg name="debug" value="false"/>
-        <arg name="gui" value="true"/>
-        <arg name="world_name" value='$(find steerbot)/world/world.world'/>
- </include-->
 
    <arg name="world_name" value="$(find steerbot)/world/cityy.world"/> <!-- Note: the world_name is with respect to GAZEBO_RESOURCE_PATH environmental variable -->
     <arg name="paused" value="false"/>
@@ -54,6 +48,6 @@
     -x $(arg x) -y $(arg y) -z $(arg z)
     -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)"/>
 
-    <node name="rviz" pkg="rviz" type="rviz"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find steerbot)/rviz/ackermanvehicle.rviz"/>
 </launch>
 
